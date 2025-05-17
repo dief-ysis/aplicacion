@@ -16,7 +16,15 @@ public class LibroService {
     }
 
     public Libro saveLibro(Libro libro) {
-        return libroRepository.save(libro);
+        Libro libro1 = new Libro();
+        try{
+            libro = libroRepository.save(libro);
+        }
+        catch (Exception e){
+            System.out.println("Error al guardar el libro: " + e.getMessage());
+            return null;
+        }
+        return libro1;
     }
 
     public Libro getLibroById(int id) {
