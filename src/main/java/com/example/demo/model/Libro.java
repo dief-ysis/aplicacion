@@ -13,20 +13,19 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-//@Data
-//@AllArgsConstructor
-//@NoArgsConstructor
+// @Data
+// @AllArgsConstructor
+// @NoArgsConstructor
+// public class Libro {
 
+//     private int id;
+//     private String isbn;
+//     private String title;
+//     private String author;
+//     private String publisher;
+//     private LocalDate publicationDate;
 
-//public class Libro {
-//    private int id;
-//    private String isbn;
-//    private String titulo;
-//    private String editorial;
-//    private int fechaPublicacion;
-//    private String autor;
-//}
-
+// }
 
 @Entity
 @Table(name = "libro")
