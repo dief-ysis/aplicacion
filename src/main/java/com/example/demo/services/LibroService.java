@@ -12,23 +12,31 @@ public class LibroService {
     private LibroRepository libroRepository;
 
     public List<Libro> getLibros() {
-        return libroRepository.obteneLibros();
+        return libroRepository.findAll();
     }
 
     public Libro saveLibro(Libro libro) {
-        return libroRepository.guardar(libro);
+        Libro libro1 = new Libro();
+        try{
+            libro = libroRepository.save(libro);
+        }
+        catch (Exception e){
+            System.out.println("Error al guardar el libro: " + e.getMessage());
+            return null;
+        }
+        return libro1;
     }
 
     public Libro getLibroById(int id) {
-        return libroRepository.buscarPorId(id);
+        return libroRepository.findById(id).orElse(null);
     }
 
     public Libro updateLibro(Libro libro) {
-        return libroRepository.actializar(libro);
+        return libroRepository.save(libro);
     }
 
     public String deleteLibro(int id) {
-        libroRepository.eliminar(id);
+        libroRepository.deleteById(id);
         return "Producto eliminado con id: " + id;
     }
 }
